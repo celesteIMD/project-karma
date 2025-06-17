@@ -1,0 +1,156 @@
+.reviews{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 250px;
+    margin-right: 250px;
+    /*margin: 200px 300px 50px;*/
+}
+.reviews-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.reviews-body{
+    display: flex;
+    flex-direction: column;
+    /*border: black 1px solid;*/
+}
+.review{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px 20px 0;
+    /*padding: 20px;*/
+}
+.mult-select-tag .shadow {
+    box-shadow: none;
+}
+.review:nth-child(even) {
+    background-color: rgba(225, 225, 225, 0.85);
+}
+
+.review:nth-child(odd) {
+    background-color: rgba(236, 232, 232, 0.85);
+}
+
+.review-title{
+    margin: 0;
+}
+.review-intro{
+    display: flex;
+    font-weight: bolder;
+    font-size: 40px;
+    text-align: center;
+    flex: 10%;
+    flex-direction: column;
+    background-color: #f16161;
+    color:white;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    border-radius: 20px;
+}
+
+.review-rating {
+    vertical-align: middle;
+    line-height: 100px;
+}
+
+.review-extra{
+    display: flex;
+    flex-direction: column;
+    flex: 5%;
+    text-align: right;
+    font-style: italic;
+    color: #505050;
+}
+.review-content{
+    margin-top:5px;
+    flex: 75%;
+}
+.filter-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.date-posted{
+    font-size: x-small;
+    margin:0;
+}
+.review-author{
+    margin:0;
+    font-size: small;
+}
+
+.filter-options {
+    border-radius: 10px 2px 2px 2px;
+    font-weight: bold;
+    color:white;
+    font-size:16px;
+    transition: 0.1s;
+    background-color: #2c2c2c;
+    padding: 3px;
+    z-index: 1;
+    border:0;
+    height: 42px;
+}
+
+.multi-select {
+    height: 44px;
+}
+
+.input-container{
+    background-color: #2c2c2c;
+    color:white;
+    border-radius: 2px 2px 0 0;
+}
+
+.mult-select-tag .rounded {
+    border: none;
+}
+
+.mult-select-tag .drawer {
+    background: none;
+}
+
+.input-body {
+    background-color: #2c2c2c;
+    color:white;
+
+}
+
+.input-body .input {
+    background-color: white;
+    color:black;
+}
+
+.mult-select-tag .rounded {
+    border-radius: 10px;
+}
+
+li{
+    color: black;
+    background-color: white;
+    margin-bottom:5px;
+}
+
+/*li:hover {*/
+/*    color:black*/
+/*}*/
+
+ul {
+    background-color: #2c2c2c;
+    color:white;
+}
+
+.btn-container {
+    background-color: #2c2c2c;
+    color:white;
+    border-radius: 0 0 10px 2px;
+}
+
+#multi-select-header {
+    background-color: #2c2c2c;
+    color: white;
+    border-radius: 0 0 10px 2px;
+}

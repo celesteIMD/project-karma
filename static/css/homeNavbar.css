@@ -1,0 +1,111 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: end;
+    height: 70px;
+    column-gap: 10px;
+}
+
+.loginTitle{
+    font-weight: bold;
+    color: white;
+    transition: color 0.2s;
+}
+
+.loginTitle:visited {
+    font-weight: bold;
+    color: white;
+    transition: color 0.2s;
+}
+
+.loginTitle:hover {
+    color: #d8d8d8;
+    transition: color 0.2s;
+}
+
+
+.logoutTitle{
+    font-weight: bold;
+    color: white;
+    transition: color 0.2s;
+}
+
+.logoutTitle:visited {
+    font-weight: bold;
+    color: white;
+    transition: color 0.2s;
+}
+
+.logoutTitle:hover {
+    color: #d8d8d8;
+    transition: color 0.2s;
+}
+
+.review-button {
+    border-width: 0;
+    margin: 0 10px;
+    padding: 7px 15px 7px 15px;
+    background-color: white;
+    transition: background-color 0.2s;
+    border-radius: 10px 2px 10px 2px;
+    cursor: pointer;
+    max-height: 32px;
+}
+
+
+.reviewTitle{
+    color: #ffffff;
+    transition: color 0.2s;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #2c2c2c;
+}
+
+.reviewTitle:visited {
+    color: #ffffff;
+    transition: color 0.2s;
+    font-size: 15px;
+    background-color: #2c2c2c;
+}
+
+.add-icon {
+    justify-content: start;
+    width: 12px;
+    margin-left: 8px;
+    transition: filter, 0.5s;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(13%) saturate(5827%) hue-rotate(192deg) brightness(116%) contrast(94%);
+}
+
+#add-review-button {
+    transition: background-color, 0.2s;
+    background-color: #2c2c2c;
+}
+
+#add-review-button:hover {
+    transition: background-color, 0.2s;
+    background-color: #4a4a4a;
+}
+
+
+.hide{
+    display: none;
+}
+.nav-profile-picture-container{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ddd;
+    margin: 10px 0px;
+}
+.nav-profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    color: white;
+}

@@ -1,0 +1,141 @@
+.home-content{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    position: relative;
+}
+
+.filter-icon{
+    justify-content: start;
+    width: 18px;
+    margin-top: 3px;
+    transition: filter, 0.5s;
+    filter: brightness(0) saturate(100%) invert(5%) sepia(32%) saturate(3551%) hue-rotate(358deg) brightness(96%) contrast(112%);
+}
+
+.filter-button .filter-icon:hover{
+    transition: filter, 0.5s;
+    filter: brightness(0) saturate(100%) invert(11%) sepia(60%) saturate(4042%) hue-rotate(351deg) brightness(106%) contrast(100%);
+}
+
+.filter-button .filter-icon:active{
+    transition: filter, 0.3s;
+    filter: brightness(0) saturate(100%) invert(43%) sepia(61%) saturate(2618%) hue-rotate(334deg) brightness(88%) contrast(93%);
+}
+
+.search-title{
+    margin: 0;
+    background-color: #e6e6e6;
+    transition: background-color 0.2s;
+    z-index: 100;
+    font-weight: normal;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.search-title:hover {
+    background-color: #cdcdcd;
+    transition: background-color 0.2s;
+}
+
+.search-title:active {
+    background-color: #ec5757;
+    transition: background-color 0.2s;
+}
+
+.search-bar {
+    width: 40vw;
+    padding: 4px;
+    height: 100%;
+    max-height: 32px;
+    font-size: 18px;
+    border-style: none;
+    transition: width, 0.4s;
+    background-color: #dfdfdf;
+}
+
+.search-bar:focus {
+    transition: width, 0.3s;
+    width: 40vw;
+}
+
+.search-button {
+    height: 32px;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 18px;
+    border-width: 0;
+    background-color: #dfdfdf;
+    border-radius: 10px 0 0 2px;
+}
+
+.dropdown{
+    margin-top: 8px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    display: none;
+    max-height: 300px;
+    width: 100%;
+}
+.search-bar:focus{
+    outline: none;
+    height: 140px;
+}
+
+.hide{
+    display: none;
+}
+
+.filter-box{
+    background-color: #dfdfdf;
+    border-radius: 2px 2px 2px 15px;
+}
+
+.recent-posts-box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-button{
+    border-radius: 12px 3px 12px 3px;
+    font-weight: bold;
+    color:white;
+    font-size:30px;
+    transition: 0.1s;
+    background-color: #2c2c2c;
+    padding: 8px 18px 8px 18px;
+    z-index: 1;
+    border:0;
+}
+
+.register-button:hover {
+    background-color: #494949;
+    color:white;
+    transition: 0.1s;
+    cursor:pointer;
+}
+
+.register-button:visited{
+    color:white;
+}
+
+.bleh{
+     margin-top: 25px;
+}
