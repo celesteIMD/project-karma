@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+{% include 'navbar.html' %}
+
+<body>
+
+    <div class="box">
+        <h1>Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="grid">
+                <div class="left-side">
+                    <span>Username: </span>
+                    <br>
+                    <span>Password: </span>
+                    <br>
+                    <span>Confirm Password: </span>
+                </div>
+                   
+                <div class="right-side">
+                    {{ form.username }}
+                    <br>
+                    {{ form.password1 }}
+                    <br>
+                    {{ form.password2 }}
+                </div>
+            </div>
+
+            <button type="submit" class="submit" id="filter-button-large">Submit</button>
+            <br>
+             <a href="{% url 'login' %}">Have an account? Click here</a>
+        </form>
+    </div>
+    
+</body>
+
+{% include 'footer.html' %}
+</html>

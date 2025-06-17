@@ -1,0 +1,51 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/homeNavbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    
+</head>
+{% include 'homeNavbar.html' %}
+<body>
+       <div class="home-content">
+            
+           <img src="{% static 'images/logo.png' %}" class="logo">
+                   
+            <div class="search-container">
+                 <button class="search-button">
+                    <img src="{% static 'images/search.png' %}" class="filter-icon">
+                </button>
+                <form method = "POST" action="{% url 'results' %}">
+                    {% csrf_token %}
+        
+                    <input type="search" name="searched" id="searchBar" class="search-bar"
+                           autocomplete="off"  autocorrect="off"  autocapitalize="off"  spellcheck="false"
+                            placeholder="Search...">
+                </form>
+            </div>   
+           
+           <div class="filter-box">
+           </div>
+           
+{#           <div class="recent-posts-box">#}
+{#               <h1>Recent Reviews</h1>#}
+{#               #}
+{#               {% include 'homeReviews.html' %}#}
+{#           </div>#}
+           <div class="bleh">
+               <form>
+                    <a class="register-button" href="{% url 'signup' %}">Register</a>
+               </form>
+           </div>
+       </div>
+</body>
+    
+<script src="{% static 'js/index.js'%}"></script>
+    {% include 'footer.html' %}
+</html>

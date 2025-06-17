@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'reviews.html' %}
+<head>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Voces&display=swap" rel="stylesheet">
+</head>
+
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<nav>
+    <a href="/">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+    </a>
+    <div class="search-container">
+         <button class="search-button">
+            <img src="{% static 'images/search.png' %}" class="filter-icon">
+        </button>
+        <form method = "POST" action="{% url 'results' %}">
+            {% csrf_token %}
+
+            <input type="search" name="searched" id="searchBar" class="search-bar"
+                   autocomplete="off"  autocorrect="off"  autocapitalize="off"  spellcheck="false"
+                    placeholder="Search...">
+        </form>
+        <button class="filter-button">
+            <img src="{% static 'images/filter.png' %}" class="filter-icon">
+        </button>
+        <div class="dropdown" id = "searchDropdown"></div>
+         <button onclick="reviewPopUp()" class="review-button reviewTitle" id = "add-review-button">
+            Add Review
+            <img src="{% static 'images/addPost.png' %}" class="add-icon">
+        </button>
+        
+
+    </div>
+
+    {% if user.is_authenticated %}
+        <a class="logoutTitle" href="{% url 'logout' %}">Logout</a>
+        <a class="nav-profile-picture-container" href="{% url 'profile' %}">
+            <img src = "{{user.profile.image.url}}" class="nav-profile-picture">
+        </a>
+
+    {% else %}
+        <a class="loginTitle" href="{% url 'login' %}">Login</a>
+    {% endif %}
+</nav>
+<template search-card-template>
+    <a class="search-card" search-card>
+        <h3 class="search-title" search-title></h3>
+    </a>
+</template>
+
+
+

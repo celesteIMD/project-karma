@@ -1,0 +1,51 @@
+{% load static %}
+<!--I found this multi-select online https://github.com/codeshackio/multi-select-dropdown-js-->
+<link rel="stylesheet" href="{% static 'multi-select-library/MultiSelect.css' %}">
+
+<link rel = "stylesheet" href="{% static 'css/homeReviews.css' %}">
+<link rel="stylesheet" href="{% static 'css/homeNavbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/general.css' %}">
+
+<script src="{% static 'multi-select-library/MultiSelect.js' %}"></script>
+
+<section class="reviews">
+{#    <span class="reviews-header">#}
+{#        <h2>Reviews</h2>#}
+{#        <div class="filter-container">#}
+{#            <select class="filter-options">#}
+{#                <option value = "oldest">Oldest</option>#}
+{#                <option value = "most-recent">Most Recent</option>#}
+{#                <option value = "highest-rating">Highest Rating</option>#}
+{#                <option value = "lowest-rating">Lowest Rating</option>#}
+{#            </select>#}
+{#            <select id="example-multi-select" data-placeholder="Select Tags" multiple="multiple" data-multi-select>#}
+{#                {% for tag in tags %}#}
+{#                    <option value="{{tag.name}}">{{tag.name}}</option>#}
+{##}
+{#                {% endfor %}#}
+{#            </select>#}
+{#        </div>#}
+{#    </span>#}
+    <span class="reviews-body">
+        <template review-card-template>
+            <div class="review" review-card>
+                <div class="review-intro">
+                    <h2 class="review-title" ></h2>
+                    <div class="review-rating"></div>
+                </div>
+                <div class="review-content">
+                    
+                </div>
+                <div class="review-extra">
+                    <div class="user-info">
+                        <p class="review-author"></p>
+                    </div>
+                    <p class="date-posted"></p>
+                    <div class="review-tags">
+
+                    </div>
+                </div>
+            </div>
+        </template>
+    </span>
+</section>

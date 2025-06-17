@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Information</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel = "stylesheet" href="{% static 'css/reviewsSection.css' %}">
+
+    <link rel="stylesheet" href="{% static 'multi-select-library/MultiSelect.css' %}">
+    <script src="{% static 'multi-select-library/MultiSelect.js' %}"></script>
+</head>
+{% include 'navbar.html' %}
+<body style="padding-bottom: 100px">
+    <section class="profile-container">
+        <div class="profile-left">
+            <div class="profile-header">
+                <h1 class="title">Profile</h1>
+                <h3 class="username-reviews"> {{user.username}} </h3>
+            </div>
+            <div class="account-info">
+                <h2 class="account-title">Account Info</h2>
+                <div class="profile-picture-container">
+                    <img src = "{{user.profile.image.url}}" class="profile-picture">
+                </div>
+                <form method="post" action="{% url 'changePFP' %}" enctype="multipart/form-data" class="img-form">
+                    <span>Profile Picture</span>
+                    {% csrf_token %}
+                    {{ PFPform.image }}
+                </form>
+                <button class="save-button" type="submit" id="filter-button-large">Save</button>
+            </div>
+        </div>
+        <div class="review-history">
+            <div class="review-history-header">
+                <h2 class="review-history-title">
+                    Review History
+                </h2>
+
+                <div class="kill">
+                    <div class="review-search" id ="filter-options-profile">
+                        <form>
+                            <input class="review-search-bar" type="search" id ="hide">
+                        </form>
+                    </div>
+                    <div class="filter-options" id ="filter-options-profile">
+                        <select class="filter-options" id ="filter-options-profile">
+                        <option value = "oldest">Oldest</option>
+                        <option value = "most-recent">Most Recent</option>
+                        <option value = "highest-rating">Highest Rating</option>
+                        <option value = "lowest-rating">Lowest Rating</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-container">
+
+            </div>
+        </div>
+    </section>
+</body>
+
+<template review-card-template>
+    <div class="review" review-card>
+        <div class="review-intro">
+            <h2 class="review-title"></h2>
+            <div class="review-rating">
+
+            </div>
+        </div>
+        <div class="review-content">
+
+        </div>
+        <div class="review-extra">
+            <div class="user-info">
+                <p class="review-author"></p>
+            </div>
+            <p class="date-posted"></p>
+            <div class="review-tags">
+
+            </div>
+        </div>
+    </div>
+</template>
+<script src="{% static 'js/profile.js'%}"></script>
+</html>
+
+{% include 'footer.html' %}
+</html>
+

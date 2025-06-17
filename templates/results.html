@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/results.css' %}">
+
+</head>
+{% include 'navbar.html' %}
+{% include 'reviews.html'%}
+<body id = "body">
+    {% if searched %}
+    <section class="body-header">
+        <div class="title-header">
+            <i><p>Matches For</p></i>
+            <div class="filter-container">
+{#              <button>Filter</button>#}
+              <p>{{search_results|length}} Results</p>
+              <button id="filter-button-large">
+                  <span>Filter</span>
+                  <img src="{% static 'images/filter.png' %}">
+
+              </button>
+            </div>
+        </div>
+        <div class = "search-title-results">
+          "{{ searched }}"
+        </div>
+    </section>
+    <section class="body-info">
+    
+        {% for result in search_results %}
+            {% if result.type == 'room' %}
+                <a href="{% url 'room' result.id %}" class="result">
+                    <div class="result-title-container">
+                        <h3 class="result-title">{{ result.title }}</h3>
+                    </div>
+                    <div class="result-tags">
+                        {% for tag in result.tags.all %}
+                            <span class="tag">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </a>
+            {% endif %}
+            {% if result.type == 'building' %}
+                <a href="{% url 'building' result.id %}" class="result">
+                    <div class="result-title-container">
+                        <h3 class="result-title">{{ result.title }}</h3>
+                    </div>
+                    <div class="result-tags">
+                        {% for tag in result.tags.all %}
+                            <span class="tag">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </a>
+            {% endif %}
+
+        {% endfor %}
+    </section>
+    {% else %}
+        <h1>You didn't search!</h1>
+
+    {% endif %}
+    
+    
+</body>
+<div class="results-nav">
+    {% include 'footer.html' %}
+</div>
+</html>

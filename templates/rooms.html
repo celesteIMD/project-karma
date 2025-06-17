@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{room.title}}</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel = "stylesheet" href="{% static 'css/room.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+{% include 'navbar.html' %}
+{% include 'reviews.html'%}
+<body id = "body">
+    <section class="info">
+        <span class="info-header">
+            <h1 class="room-title">{{room.title}}</h1>
+            <h3 class="room-info"><span>Average Rating: {{average}}/5.0</span></h3>
+        </span>
+        <span class="info-body">
+            <div>
+              <canvas id="myChart" width="750" height="300" ></canvas>
+            </div>
+            <div class="info-popular-tags">
+                <span class="info-header">
+                    <img src="{% static 'images/popularTags.png' %}" class="tags-icon">
+
+                    <div> <h2>Popular</h2>
+                    <h1>Tags</h1></div>
+                </span>
+
+                <div class="tags-container">
+                    {% for tag in tags %}
+                        <div class="tag-content"><span>{{tag.name}}</span></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </span>
+    </section>
+    {% include 'reviewsSection.html' %}
+</body>
+
+{% include 'footer.html' %}
+<script type="module" src="{% static 'js/rooms.js'%}"></script>
+
+</html>
